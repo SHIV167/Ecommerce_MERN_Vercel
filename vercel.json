@@ -8,11 +8,11 @@
       "use": "@vercel/node"
     },
     {
-      "src": "client/**/*",
+      "src": "client/dist/**",
       "use": "@vercel/static"
     },
     {
-      "src": "admin/**/*",
+      "src": "admin/dist/**",
       "use": "@vercel/static"
     }
   ],
@@ -22,19 +22,32 @@
       "dest": "server/index.ts"
     },
     {
+      "src": "/assets/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/client/dist/assets/$1"
+    },
+    {
+      "src": "^/manifest.json",
+      "dest": "/client/dist/manifest.json"
+    },
+    {
+      "src": "^/favicon.ico",
+      "dest": "/client/dist/favicon.ico"
+    },
+    {
       "src": "/admin",
-      "dest": "admin/index.html"
+      "dest": "/admin/dist/index.html"
     },
     {
       "src": "/admin/(.*)",
-      "dest": "admin/$1"
+      "dest": "/admin/dist/$1"
     },
     {
       "handle": "filesystem"
     },
     {
-      "src": "/.*",
-      "dest": "client/index.html"
+      "src": "/(.*)",
+      "dest": "/client/dist/index.html"
     }
   ]
 }
