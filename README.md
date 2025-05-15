@@ -125,6 +125,70 @@ The deployment will create three URLs:
 - /admin: Your admin panel
 - /api: Your server API
 
+## Deployment Instructions
+
+This project is configured to deploy the **main application** (server and client) on one URL and the **admin panel** on a separate URL.
+
+### Main Application
+
+The main application includes both the server (API routes) and the client (UI). Its Vercel configuration (defined in `vercel.json`) is as follows:
+
+```json
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "client/dist/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/index.html"
+    }
+  ]
+}
+```
+
+Deploy this configuration as a Vercel project to serve the main application at your desired URL (for example, `https://ecommerce-mern-vercel.vercel.app/`).
+
+### Admin Panel
+
+The admin panel is deployed separately. Create a new Vercel project with the following configuration (for example, in a file named `admin-vercel.json`):
+
+```json
+{
+  "version": 2,
+  "buildCommand": "vite build --config vite.admin.config.ts",
+  "builds": [
+    {
+      "src": "admin/dist/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/admin/dist/index.html"
+    }
+  ]
+}
+```
+
+Deploy this second project on Vercel so that your admin panel is available at a different URL (for example, `https://admin.ecommerce-mern-vercel.vercel.app/`).
+
+This setup allows you to manage deployments independently, ensuring that the main application and admin panel are served from separate URLs.
+
 ## Project Structure
 
 ```

@@ -9,10 +9,6 @@
     {
       "src": "client/dist/**",
       "use": "@vercel/static"
-    },
-    {
-      "src": "admin/dist/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -36,14 +32,6 @@
     {
       "src": "^/static/(.*)",
       "dest": "/client/dist/static/$1"
-    },
-    {
-      "src": "/admin",
-      "dest": "/admin/dist/index.html"
-    },
-    {
-      "src": "/admin/(.*)",
-      "dest": "/admin/dist/$1"
     },
     {
       "handle": "filesystem"
