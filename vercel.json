@@ -4,7 +4,7 @@
   "outputDirectory": "dist",
   "builds": [
     {
-      "src": "server/**/*.ts",
+      "src": "server/index.ts",
       "use": "@vercel/node"
     },
     {
