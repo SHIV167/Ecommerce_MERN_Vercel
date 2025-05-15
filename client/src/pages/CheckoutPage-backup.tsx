@@ -688,6 +688,6 @@ const CheckoutPage = () => {
       </footer>
     </>
   );
-}
+};
 
 export default CheckoutPage;

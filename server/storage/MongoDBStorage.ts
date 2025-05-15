@@ -449,13 +449,21 @@ export class MongoDBStorage implements IStorage {
 
   // Review operations
   async getProductReviews(productId: string): Promise<Review[]> {
-    const reviews = await ReviewModel.find({ productId });
-    return reviews.map((r) => convertToObject<Review>(r));
+    const reviews = await ReviewModel.find({ productId }).lean();
+    return reviews.map((r: any) => ({
+      ...r,
+      _id: r._id?.toString() || r.id,
+      id: r.id || r._id?.toString()
+    } as Review));
   }
 
   async getUserReviews(userId: string): Promise<Review[]> {
-    const reviews = await ReviewModel.find({ userId });
-    return reviews.map((r) => convertToObject<Review>(r));
+    const reviews = await ReviewModel.find({ userId }).lean();
+    return reviews.map((r: any) => ({
+      ...r,
+      _id: r._id?.toString() || r.id,
+      id: r.id || r._id?.toString()
+    } as Review));
   }
 
   async createReview(review: InsertReview): Promise<Review> {
@@ -465,17 +473,27 @@ export class MongoDBStorage implements IStorage {
       id,
       createdAt: new Date()
     });
-    await newReview.save();
-    return convertToObject<Review>(newReview);
+    const savedReview = await newReview.save();
+    const reviewObj = savedReview.toObject();
+    return {
+      ...reviewObj,
+      _id: reviewObj._id?.toString() || id,
+      id: reviewObj.id || id
+    } as Review;
   }
 
   async updateReview(id: string, review: Partial<InsertReview>): Promise<Review | undefined> {
     const updatedReview = await ReviewModel.findByIdAndUpdate(
       id,
       { $set: review },
-      { new: true }
-    );
-    return updatedReview ? convertToObject<Review>(updatedReview) : undefined;
+      { new: true, lean: true }
+    ) as any;
+    if (!updatedReview) return undefined;
+    return {
+      ...updatedReview,
+      _id: updatedReview._id?.toString() || id,
+      id: updatedReview.id || id
+    } as Review;
   }
 
   async deleteReview(id: string): Promise<boolean> {
