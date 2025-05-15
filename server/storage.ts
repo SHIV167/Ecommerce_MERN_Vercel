@@ -222,6 +222,7 @@ export class MemStorage implements IStorage {
 
     // Add demo products
     const product1 = await this.createProduct({
+      sku: "KMS-001",
       name: "Kumkumadi Youth-Clarifying Mask-Scrub",
       description: "A luxurious mask-scrub that gently cleanses and clarifies skin while enhancing radiance. This 2-in-1 formula is infused with kumkumadi oil, saffron, and natural exfoliants to reveal smoother, brighter skin.",
       shortDescription: "Gently Cleanses And Clears Skin, While Enhancing Radiance",
@@ -239,6 +240,7 @@ export class MemStorage implements IStorage {
     });
     
     const product2 = await this.createProduct({
+      sku: "KSS-001",
       name: "Kumkumadi Youth-Illuminating Silky Serum",
       description: "An innovative serum formulated with traditional Ayurvedic ingredients for skin brightening and illumination. This silky serum is the botanical alternative to Vitamin C, delivering intense hydration and radiance.",
       shortDescription: "The Botanical Alternative To Vitamin C",
@@ -256,6 +258,7 @@ export class MemStorage implements IStorage {
     });
     
     const product3 = await this.createProduct({
+      sku: "KDS-001",
       name: "Kumkumadi Glow Discovery Set",
       description: "Experience the magic of Kumkumadi with this curated set of glow-enhancing products. Powered with saffron, this trio delivers transformative results for radiant, youthful skin.",
       shortDescription: "Glow Trio | Powered With Saffron",
@@ -273,6 +276,7 @@ export class MemStorage implements IStorage {
     });
     
     const product4 = await this.createProduct({
+      sku: "KFO-001",
       name: "Kumkumadi Brightening Face Oil",
       description: "A luxurious Ayurvedic facial oil infused with saffron and 12 precious herbs to brighten skin, reduce dark spots, and promote a youthful glow.",
       shortDescription: "Luxurious Ayurvedic facial oil for brightening",
@@ -290,6 +294,7 @@ export class MemStorage implements IStorage {
     });
     
     const product5 = await this.createProduct({
+      sku: "BHO-001",
       name: "Bringadi Intensive Hair Treatment Oil",
       description: "A potent hair treatment oil formulated with Indigo, Eclipta Alba, and Gooseberry to reduce hair fall, strengthen roots, and promote healthy growth.",
       shortDescription: "Reduces hair fall and promotes growth",
@@ -307,6 +312,7 @@ export class MemStorage implements IStorage {
     });
     
     const product6 = await this.createProduct({
+      sku: "RFC-001",
       name: "Rose Jasmine Face Cleanser",
       description: "A gentle, aromatic cleanser that effectively removes impurities while preserving skin's natural moisture. Infused with rose and jasmine for a sensorial experience.",
       shortDescription: "Gentle cleansing with aromatic benefits",
@@ -324,6 +330,7 @@ export class MemStorage implements IStorage {
     });
     
     const product7 = await this.createProduct({
+      sku: "PRW-001",
       name: "Pure Rose Water",
       description: "Steam-distilled pure rose water that tones, hydrates, and refreshes skin. Can be used as a facial toner or added to face packs for enhanced benefits.",
       shortDescription: "Pure, steam-distilled rose hydrosol",

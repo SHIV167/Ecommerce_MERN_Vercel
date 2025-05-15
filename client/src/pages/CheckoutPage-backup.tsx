@@ -57,7 +57,7 @@ const checkoutSchema = z.object({
 
 type CheckoutFormValues = z.infer<typeof checkoutSchema>;
 
-export default function CheckoutPage() {
+const CheckoutPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [razorpayOrder, setRazorpayOrder] = useState<{orderId:string;amount:number;currency:string} | null>(null);
   const [pendingOrderPayload, setPendingOrderPayload] = useState<any>(null);
@@ -347,122 +347,122 @@ export default function CheckoutPage() {
               <div className="lg:col-span-2">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <div className="border border-neutral-sand rounded-md overflow-hidden">
-                  <div className="bg-neutral-cream p-4 border-b border-neutral-sand">
-                    <h2 className="font-heading text-lg text-primary">Billing Information</h2>
-                  </div>
-                  <div className="p-6 space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Full Name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="John Doe" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                              <Input placeholder="john@example.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                    
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone</FormLabel>
-                          <FormControl>
-                            <Input placeholder="+91 9876543210" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="address"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Address</FormLabel>
-                          <FormControl>
-                            <Textarea placeholder="1234 Main St" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="city"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>City</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Mumbai" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="state"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>State</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Maharashtra" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="zipCode"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Zip code</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Zip code" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                    
-                    <FormField
-                      control={form.control}
-                      name="sameAsBilling"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-                          <FormControl>
-                            <input
-                              type="checkbox"
-                              checked={field.value}
+                    <div className="border border-neutral-sand rounded-md overflow-hidden">
+                      <div className="bg-neutral-cream p-4 border-b border-neutral-sand">
+                        <h2 className="font-heading text-lg text-primary">Billing Information</h2>
+                      </div>
+                      <div className="p-6 space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Full Name</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="John Doe" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          
+                          <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Email</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="john@example.com" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+                        
+                        <FormField
+                          control={form.control}
+                          name="phone"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Phone</FormLabel>
+                              <FormControl>
+                                <Input placeholder="+91 9876543210" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        
+                        <FormField
+                          control={form.control}
+                          name="address"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Address</FormLabel>
+                              <FormControl>
+                                <Textarea placeholder="123 Main St" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                          <FormField
+                            control={form.control}
+                            name="city"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>City</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="Mumbai" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          
+                          <FormField
+                            control={form.control}
+                            name="state"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>State</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="Maharashtra" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          
+                          <FormField
+                            control={form.control}
+                            name="zipCode"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Zip code</FormLabel>
+                                <FormControl>
+                                  <Input placeholder="Zip code" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+                        
+                        <FormField
+                          control={form.control}
+                          name="sameAsBilling"
+                          render={({ field }) => (
+                            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                              <FormControl>
+                                <input
+                                  type="checkbox"
+                                  checked={field.value}
                               onChange={field.onChange}
                               className="h-4 w-4 mt-1"
                             />
@@ -623,52 +623,54 @@ export default function CheckoutPage() {
                     "Place Order"
                   )}
                 </Button>
-              </form>
-            </Form>
-          </div>
-          
-          <div className="lg:col-span-1">
-            <div className="border border-neutral-sand rounded-md overflow-hidden sticky top-4">
-              <div className="bg-neutral-cream p-4 border-b border-neutral-sand">
-                <h2 className="font-heading text-lg text-primary">Order Summary</h2>
+                  </form>
+                </Form>
               </div>
-              <div className="p-4">
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-gray">Subtotal</span>
-                    <span className="font-medium">{formatCurrency(subtotal)}</span>
+              
+              <div className="lg:col-span-1">
+                <div className="border border-neutral-sand rounded-md overflow-hidden sticky top-4">
+                  <div className="bg-neutral-cream p-4 border-b border-neutral-sand">
+                    <h2 className="font-heading text-lg text-primary">Order Summary</h2>
                   </div>
-                  
-                  {/* Add Coupon Form */}
-                  <CouponForm
-                    cartTotal={subtotal}
-                    onCouponApplied={applyCoupon}
-                    onCouponRemoved={removeCoupon}
-                    appliedCoupon={appliedCoupon}
-                  />
-                  
-                  {appliedCoupon && (
-                    <div className="flex justify-between items-center text-green-600">
-                      <span>Discount</span>
-                      <span>-{formatCurrency(appliedCoupon.discountValue)}</span>
+                  <div className="p-4">
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-neutral-gray">Subtotal</span>
+                        <span className="font-medium">{formatCurrency(subtotal)}</span>
+                      </div>
+                      
+                      {/* Add Coupon Form */}
+                      <CouponForm
+                        cartTotal={subtotal}
+                        onCouponApplied={applyCoupon}
+                        onCouponRemoved={removeCoupon}
+                        appliedCoupon={appliedCoupon}
+                      />
+                      
+                      {appliedCoupon && (
+                        <div className="flex justify-between items-center text-green-600">
+                          <span>Discount</span>
+                          <span>-{formatCurrency(appliedCoupon.discountValue)}</span>
+                        </div>
+                      )}
+                      
+                      <div className="flex justify-between items-center">
+                        <span className="text-neutral-gray">Shipping</span>
+                        <span>{finalTotal > 500 ? "Free" : formatCurrency(50)}</span>
+                      </div>
+                      
+                      <div className="flex justify-between items-center">
+                        <span className="text-neutral-gray">Tax (18%)</span>
+                        <span>{formatCurrency(finalTotal * 0.18)}</span>
+                      </div>
+                      
+                      <div className="border-t border-neutral-sand pt-4 flex justify-between items-center">
+                        <span className="font-heading text-primary">Total</span>
+                        <span className="font-heading text-xl text-primary">
+                          {formatCurrency(finalTotal + (finalTotal > 500 ? 0 : 50) + finalTotal * 0.18)}
+                        </span>
+                      </div>
                     </div>
-                  )}
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-gray">Shipping</span>
-                    <span>{finalTotal > 500 ? "Free" : formatCurrency(50)}</span>
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-gray">Tax (18%)</span>
-                    <span>{formatCurrency(finalTotal * 0.18)}</span>
-                  </div>
-                  
-                  <div className="border-t border-neutral-sand pt-4 flex justify-between items-center">
-                    <span className="font-heading text-primary">Total</span>
-                    <span className="font-heading text-xl text-primary">
-                      {formatCurrency(finalTotal + (finalTotal > 500 ? 0 : 50) + finalTotal * 0.18)}
-                    </span>
                   </div>
                 </div>
               </div>
@@ -687,3 +689,5 @@ export default function CheckoutPage() {
     </>
   );
 }
+
+export default CheckoutPage;
