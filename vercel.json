@@ -7,11 +7,11 @@
       "use": "@vercel/node"
     },
     {
-      "src": "client/dist/**",
+      "src": "client/build/**",
       "use": "@vercel/static"
     },
     {
-      "src": "admin/dist/**",
+      "src": "admin/build/**",
       "use": "@vercel/static"
     }
   ],
@@ -23,34 +23,34 @@
     {
       "src": "/assets/(.*)",
       "headers": { "cache-control": "public, max-age=31536000, immutable" },
-      "dest": "/client/dist/assets/$1"
+      "dest": "/client/build/assets/$1"
     },
     {
       "src": "^/manifest.json",
-      "dest": "/client/dist/manifest.json"
+      "dest": "/client/build/manifest.json"
     },
     {
       "src": "^/favicon.ico",
-      "dest": "/client/dist/favicon.ico"
+      "dest": "/client/build/favicon.ico"
     },
     {
       "src": "^/static/(.*)",
-      "dest": "/client/dist/static/$1"
+      "dest": "/client/build/static/$1"
     },
     {
       "src": "/admin",
-      "dest": "/admin/dist/index.html"
+      "dest": "/admin/build/index.html"
     },
     {
       "src": "/admin/(.*)",
-      "dest": "/admin/dist/$1"
+      "dest": "/admin/build/$1"
     },
     {
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/client/dist/index.html"
+      "dest": "/client/build/index.html"
     }
   ]
 }
