@@ -1,0 +1,37 @@
+==================================SERVER & CLIENT===========================================================
+CLOUDINARY_API_KEY=743535752191889
+CLOUDINARY_API_SECRET=EoHDNbJQAH22OXg7jf8t61dPAWg
+CLOUDINARY_CLOUD_NAME=dj15ypnx8
+COOKIE_DOMAIN=.ecommercepro-0ukc.onrender.com
+COOKIE_MAX_AGE=86400000
+CORS_ORIGINS=https://ecommercepro-0ukc.onrender.com,https://ecommercepro-admin.onrender.com
+FRONTEND_URL=https://ecommercepro-0ukc.onrender.com
+GOOGLE_CLIENT_ID=368232272369-ejhni0181j0at6p3jcl9tsn526eu7mg9.apps.googleusercontent.com
+JWT_EXPIRES_IN=1d
+JWT_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+JWT_SECRET_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MzkzYWQ5NmZjN2FiNWI3MDQzNzRhMiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMTgwNDE0M30.8bnV2XEi-O9LfngmLUBzkIVoV7oROTFngqAay5khO3k
+MONGODB_URI=mongodb+srv://admin:Sshiv12345@cluster0.4fs9ylv.mongodb.net/newecom
+RAZORPAY_KEY_ID= rzp_test_KEY_ID
+RAZORPAY_KEY_SECRET=your_secret_key
+SESSION_KEY=s%3AJ3mFgAIWQ2qNN_AVyIiUZBtKtZscnyyy.tRboS94wQZ5uNCUbKZZBibLbzKConCCcC8FS2%2BkXztg
+SMTP_FROM=SHIV STORE EcommercePro <jhashiv5@gmail.com>
+SMTP_HOST=smtp.gmail.com
+SMTP_PASS=sducsvqkgucfimiv
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=jhashiv5@gmail.com
+VITE_API_BASE_URL=https://ecommercepro-0ukc.onrender.com
+VITE_API_URL=https://ecommercepro-0ukc.onrender.com
+
+
+
+
+
+
+
+
+===================================================ADMIN ENV=====================================================================
+
+VITE_API_URL=https://ecommercepro-0ukc.onrender.com
+
+

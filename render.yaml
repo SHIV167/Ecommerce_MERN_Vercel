@@ -1,0 +1,58 @@
+# Render deployment manifest for EcommercePro
+
+services:
+  # Web Service for Node backend
+  - type: web
+    runtime: node
+    name: EcommercePro-Server
+    plan: starter
+    rootDir: .
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_SECURE
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        sync: false
+      - key: COOKIE_MAX_AGE
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+
+  # Static Site for Client
+  - type: web
+    runtime: static
+    name: EcommercePro-Client
+    plan: starter
+    rootDir: .
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist/public
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+
+  # Static Site for Admin
+  - type: web
+    runtime: static
+    name: EcommercePro-Admin
+    plan: starter
+    rootDir: .
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist/public/admin
+    envVars:
+      - key: VITE_API_URL
+        sync: false

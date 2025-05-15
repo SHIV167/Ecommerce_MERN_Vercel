@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 96%;
+    --foreground: 30 10% 16%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 16%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 16%;
+    
+    --primary: 15 23% 28%;
+    --primary-light: 15 20% 40%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 40 50% 70%;
+    --secondary-light: 40 50% 80%;
+    --secondary-foreground: 30 10% 16%;
+    
+    --accent: 355 70% 45%;
+    --accent-light: 355 60% 56%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 30 10% 93%;
+    --muted-foreground: 30 10% 40%;
+    
+    --border: 30 10% 90%;
+    --input: 30 10% 90%;
+    --ring: 40 50% 70%;
+    
+    --radius: 0.25rem;
+  }
+  
+  .dark {
+    --background: 30 10% 16%;
+    --foreground: 0 0% 100%;
+    
+    --card: 30 10% 20%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 30 10% 20%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 15 23% 28%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 40 50% 70%;
+    --secondary-foreground: 30 10% 16%;
+    
+    --accent: 355 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 30 10% 25%;
+    --muted-foreground: 0 0% 70%;
+    
+    --border: 30 10% 30%;
+    --input: 30 10% 30%;
+    --ring: 40 50% 70%;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Custom styling */
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .font-accent {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  /* Navigation links */
+  .nav-link {
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    @apply bg-primary;
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Carousel dot */
+  .carousel-dot {
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-dot.active {
+    width: 24px;
+    @apply bg-primary;
+  }
+  
+  /* Product card */
+  .product-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+}

@@ -1,0 +1,2 @@
+sku,name,description,shortDescription,price,discountedPrice,stock,slug,featured,bestseller,isNew,videoUrl,imageUrl,images,categoryId,rating,totalReviews
+EXAMPLE-SKU,Example Product,A sample description,Short desc,9.99,7.99,100,example-product,false,false,true,https://example.com/video.mp4,https://example.com/image.jpg,https://example.com/image1.jpg|https://example.com/image2.jpg,60f6e5b3c7c9126b8e3c1234,4.5,10

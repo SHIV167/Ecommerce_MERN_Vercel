@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 14% 96%;
+    --foreground: 30 10% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 16%;
+
+    --primary: 15 23% 28%;
+    --primary-light: 15 20% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 50% 70%;
+    --secondary-light: 40 50% 80%;
+    --secondary-foreground: 30 10% 16%;
+
+    --accent: 355 70% 45%;
+    --accent-light: 355 60% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 30 10% 93%;
+    --muted-foreground: 30 10% 40%;
+
+    --border: 30 10% 90%;
+    --input: 30 10% 90%;
+    --ring: 40 50% 70%;
+
+    --radius: 0.25rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 224 71% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 224 71% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 15 23% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 50% 70%;
+    --secondary-foreground: 30 10% 16%;
+
+    --accent: 355 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 215 28% 17%;
+    --muted-foreground: 0 0% 70%;
+
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 40 50% 70%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    font-family: sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom styling */
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .font-accent {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Dashboard specific styles */
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .sidebar-link.active {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    font-weight: 500;
+  }
+
+  .sidebar-link:hover:not(.active) {
+    background-color: hsl(var(--muted));
+  }
+
+  /* Table styles */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .data-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-top-width: 1px;
+    border-color: hsl(var(--border));
+  }
+
+  .data-table tr:hover {
+    background-color: hsl(var(--muted) / 0.5);
+  }
+}

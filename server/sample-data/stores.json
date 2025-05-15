@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Kama Ayurveda Standalone Store",
+    "address": "OF-31, Ground Floor, City Center Mall, Near Apollo International Hospital",
+    "city": "Guwahati",
+    "state": "Assam",
+    "phone": "+91-6901675143",
+    "email": "guwahati@kamaayurveda.com",
+    "website": "https://kamaayurveda.com/store/guwahati",
+    "hours": "10am-9pm",
+    "type": "Standalone",
+    "notes": "Flagship store in Assam.",
+    "isActive": true,
+    "latitude": 26.1445,
+    "longitude": 91.7362
+  },
+  {
+    "name": "Kama Ayurveda Mall Store",
+    "address": "Elante Mall, Ground Floor, Chandigarh",
+    "city": "Chandigarh",
+    "state": "Chandigarh",
+    "phone": "+91-9876543210",
+    "email": "chandigarh@kamaayurveda.com",
+    "website": "https://kamaayurveda.com/store/chandigarh",
+    "hours": "10am-10pm",
+    "type": "Mall",
+    "notes": "Located in Elante Mall.",
+    "isActive": true,
+    "latitude": 30.7046,
+    "longitude": 76.7179
+  },
+  {
+    "name": "Kama Ayurveda Partner Store",
+    "address": "Shop 12, Partner Plaza, MG Road, Bengaluru",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "phone": "+91-9988776655",
+    "email": "bengaluru@kamaayurveda.com",
+    "website": "https://kamaayurveda.com/store/bengaluru",
+    "hours": "9am-9pm",
+    "type": "Partner",
+    "notes": "Partner location in Bengaluru.",
+    "isActive": true,
+    "latitude": 12.9716,
+    "longitude": 77.5946
+  }
+]

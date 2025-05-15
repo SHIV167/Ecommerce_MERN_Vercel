@@ -1,0 +1,9 @@
+These are placeholder references for the images needed in the AyurvedicWisdomSection component.
+
+The actual images should be:
+
+1. ayurvedic-herbs.png - An image showing herbs, flowers, and leaves similar to the one in the screenshot for section 01.
+2. natural-ingredients.png - An image showing natural ingredients and herbs for section 02.
+3. ayurvedic-lifestyle.png - An image showing ayurvedic lifestyle elements for section 03.
+
+These images should be placed in /public/uploads/sections/ folder when available.

@@ -1,0 +1,104 @@
+/* Styles for the mobile sticky Add to Cart button */
+@media (max-width: 767px) {
+  /* Add padding to body to prevent content from being hidden behind the sticky button */
+  body {
+    padding-bottom: 80px !important;
+  }
+
+  /* Ensure the button is properly visible */
+  .mobile-sticky-cart button {
+    height: auto;
+    min-height: 50px;
+    width: 100%;
+    font-weight: 600;
+  }
+  
+  /* Fix any positioning issues with other fixed elements */
+  .fixed-bottom {
+    bottom: 76px !important;
+  }
+  
+  /* Fix any conflicts with iOS Safari */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      /* Additional padding for iOS devices */
+      padding-bottom: 100px !important;
+    }
+    .mobile-sticky-cart {
+      bottom: env(safe-area-inset-bottom, 0);
+    }
+  }
+}
+
+/* Mobile sticky Add to Cart button */
+.mobile-sticky-cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #eaeaea;
+    padding: 12px 16px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+
+.mobile-sticky-cart button {
+    width: 100%;
+    height: 70px; /* increased height for better tap target */
+    background-color: #5a493e;
+    color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 767px) {
+    .mobile-sticky-cart {
+        display: block;
+    }
+    /* Hide the regular Add to Cart button on mobile */
+    .product-actions .addToCart {
+        display: none;
+    }
+    .productDetails-container {
+        display: none !important; /* hide full product details on mobile */
+    }
+}
+
+/* Update Back to Top button position */
+.backToTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 120px; /* shifted up to avoid overlapping mobile cart */
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #5a493e;
+    color: white;
+    border-radius: 50%;
+    z-index: 100;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@media (max-width: 767px) {
+    .backToTop {
+        bottom: 150px; /* adjust to avoid overlapping mobile cart on mobile */
+    }
+}
+
+/* Ensure container adds extra bottom padding on mobile */
+@media (max-width: 768px) {
+    .productDetails-container {
+        padding: 10px;
+        padding-bottom: 80px; /* Increased space so content is not hidden behind sticky button */
+    }
+}
